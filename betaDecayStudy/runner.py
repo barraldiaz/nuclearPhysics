@@ -91,37 +91,4 @@ print("");print("=======================================================")
 
 
 
-'''
-sFreq_total=sum(sFreq)
-sigma_effGB2 = 0
-sigma_effB2 = 0
-for i in range(1,len(effGB)):
- 	sigma_effGB2 = sigma_effGB2 + (effGB[i]*sFreq[i]/total_freq)**2+(effGB[i]*freq[i]*sFreq_total/total_freq**2)**2
- 	
-for i in range(1,len(effB)):
- 	sigma_effB2 = sigma_effB2 + (effB[i]*sFreq[i]/total_freq)**2+(effB[i]*freq[i]*sFreq_total/total_freq**2)**2
-
-sigma_effB=np.sqrt(sigma_effB2) 
-sigma_effGB=np.sqrt(sigma_effGB2) 
-#Coeficients uncertainy
-
-
-sa=np.sqrt((sigma_effB/effGB_tot_exc)**2+(effB_tot_exc*sigma_effGB/effGB_tot_exc**2)**2)
-sb=np.abs(effGB_0*sigma_effGB/effGB_tot_exc**2)
-sc=np.sqrt((effB_0*sigma_effGB/effGB_tot_exc)**2+(sigma_effB/effGB_tot_exc)**2+(effB_tot_exc*sigma_effGB/effGB_tot_exc**2)**2)
-sR=np.sqrt((sNbg/Nb)**2+(sNb*Nbg/Nb**2)**2)
-
-#uncertainy of numerator and denominator
-sUpper = np.sqrt((sa*R)**2+(a*sR)**2) 
-sDowner = np.sqrt(sc**2+(sb*R)**2+(b*sR)**2)
- 
-Upper = 1-a*R
-Downer = 1+b*R-c
-
-
-
-#Final uncertainy
-sI0=np.sqrt((sUpper/Downer)**2+(sDowner*Upper/Downer**2)**2)
-'''
-
 
