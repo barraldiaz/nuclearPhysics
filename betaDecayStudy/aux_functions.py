@@ -67,7 +67,7 @@ def feed_level(file, level):
 
 
 def create_random_levels(N_levels):
-	begin=75
+	begin=100
 	level_eff=[]
 	for i in range(N_levels+1):
 		eff = np.random.uniform(0,begin)
@@ -77,19 +77,33 @@ def create_random_levels(N_levels):
 	return level_eff
 	
 	
+def create_random_levels_Ga(N_levels):
+	begin=100
+	level_eff=[]
+	for i in range(N_levels+1):
+		if i==0:
+			eff = np.random.uniform(90,begin)
+		else:
+			eff = np.random.uniform(0,begin)
+		level_eff.append(eff)
+		begin=begin-eff	
+
+	level_eff=np.array(level_eff)/100
+	return level_eff
+	
 	
 
 
 def random_intensities(beta_intensities):
 
 	#We define the experimental counts
-	Nb=128919
-	Nbg=82357
+	Nb=207906
+	Nbg=201672
 
 	#Files for the data
 
-	file_spectra="response_140Cs.rdm"
-	file_feed="Ib_140Cs.fed"
+	file_spectra="response-62Ga.rdm"
+	file_feed="Ib_ensdf_62Ga.fed"
 
 
 

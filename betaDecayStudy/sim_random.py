@@ -17,10 +17,9 @@ start=float(time.time())
 for i in range(reps):
 
 	#feeding=create_random_levels(110)	
-	feeding=np.random.normal(0,1,110)
-	feeding_norm=np.abs(feeding/sum(feeding))
+	feeding = create_random_levels_Ga(149)
 
-	intensity=random_intensities(feeding_norm)
+	intensity=random_intensities(feeding)
 	
 	I0.append(intensity)
 	

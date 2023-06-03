@@ -9,18 +9,18 @@ from sympy import *
 
 
 #We define the experimental counts
-Nb=128919
-Nbg=82357
+Nb=207906
+Nbg=201672
 
 
 #Files for the data
 
-file_spectra="response_140Cs.rdm"
-file_feed="Ib_140Cs.fed"
+file_spectra="response-62Ga.rdm"
+file_feed="Ib_ensdf_62Ga.fed"
 
 
 
-total_levels = 101
+total_levels = 149
 
 freq = []
 effGB = []
@@ -77,8 +77,8 @@ I_0 = (1-a*R)/(1+b*R-c)
 
 
 
-sNb=859
-sNbg=1667
+sNb=np.sqrt(207906)
+sNbg=np.sqrt(201672)
 
 num = (1-a*R)
 den = (1+b*R-c)
