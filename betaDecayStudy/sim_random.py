@@ -12,7 +12,7 @@ def clear():
 
 
 I0 = []
-reps=1000
+reps=800
 start=float(time.time())
 for i in range(reps):
 
@@ -23,9 +23,9 @@ for i in range(reps):
 	
 	I0.append(intensity)
 	
-	if i%15==0 and i!=0:
+	if i%1==0 and i!=0:
 		
-		clear()
+		#clear()
 	
 		print("");print("");print("===================================")
 		print("time left to end: ", int((reps-i)*(time.time()-start)/i), " seconds ");print("")
@@ -34,8 +34,8 @@ for i in range(reps):
 
 	
 av, dev = np.mean(I0), np.std(I0)
-text = "Average value is " + str(av)[:6] + " with \n deviation of " + str(dev)[:6]	
-plt.hist(I0,bins=np.linspace(min(I0)-0.02,max(I0)+0.02,100), color='blue', label=text)
+text = "Average value is " + str(av)[:6] + " with \n deviation of " + str(dev)[:]	
+plt.hist(I0,bins=np.linspace(min(I0)-0.0001,max(I0)+0.0001,100), color='blue', label=text)
 plt.legend(loc='best')
 plt.xlabel("I0 Value")
 plt.title("Descending gauss distribution \n  of feeding")

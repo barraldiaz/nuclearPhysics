@@ -82,7 +82,7 @@ def create_random_levels_Ga(N_levels):
 	level_eff=[]
 	for i in range(N_levels+1):
 		if i==0:
-			eff = np.random.uniform(90,begin)
+			eff = np.random.uniform(0,begin)
 		else:
 			eff = np.random.uniform(0,begin)
 		level_eff.append(eff)
@@ -109,7 +109,7 @@ def random_intensities(beta_intensities):
 
 	total_levels = len(beta_intensities)
 
-	freq = beta_intensities
+	I = beta_intensities
 	effGB = []
 	effB = []
 
@@ -117,20 +117,20 @@ def random_intensities(beta_intensities):
 	
 		effGB.append(sum(spectra_sum(file_spectra,l)[1:]))	
 		effB.append(sum(spectra_sum(file_spectra,l)[:]))
-
+		print(l)
 
 	#We get coeficients
 
-	total_freq = sum(freq[1:])
+	total_I = sum(I[1:])
 
 	effGB_tot_exc=0
 	effB_tot_exc=0	
 
 	for i in range(1,len(effGB)):
-	 	effGB_tot_exc = effGB_tot_exc + effGB[i]*freq[i]/total_freq
+	 	effGB_tot_exc = effGB_tot_exc + effGB[i]*I[i]/total_I
 	 	
 	for i in range(1,len(effB)):
-	 	effB_tot_exc = effB_tot_exc + effB[i]*freq[i]/total_freq
+	 	effB_tot_exc = effB_tot_exc + effB[i]*I[i]/total_I
 
 	effGB_0=effGB[0]
 	effB_0=effB[0]
