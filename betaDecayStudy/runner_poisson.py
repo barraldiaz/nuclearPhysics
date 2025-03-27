@@ -88,16 +88,21 @@ for i in range(len(N[:,0])):
     I_0vec.append(I_0)
     sI_0vec.append(sI0)
 
-    f = open("intensities2.txt", "a")
+    f = open("intensities_final.txt", "a")
     f.write("{}\t{} \n ".format(I_0,sI0))
     f.close()   
 
+I0r=0.9987
+
 fig, ax = plt.subplots(1,2, figsize = (13,6))
+ax[1].plot((0,N[-1,1]),(I0r,I0r),color='r',label="Real value of I0")
 ax[0].plot(N[:,1],sI_0vec, 'ks' , label="Variation of I_0 \n with Nb/Nbg" )
 ax[1].plot(N[:,1],I_0vec, 'ks',label="Variation of s(I_0) \n with Nb/Nbg")
 ax[1].set_ylabel("I_0")
 ax[1].set_xlabel("Nb")
 ax[0].set_ylabel("s(I_0)")
+ax[0].legend(loc='best')
+ax[1].legend(loc='best')
 ax[0].set_xlabel("Nb")
 plt.savefig("plot.eps")
 plt.show()

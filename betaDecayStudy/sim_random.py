@@ -12,7 +12,7 @@ def clear():
 
 
 I0 = []
-reps=800
+reps=1000
 start=float(time.time())
 for i in range(reps):
 
